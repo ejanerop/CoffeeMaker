@@ -1,5 +1,8 @@
 <?php
 
+namespace Deliverea\CoffeeMachine\Models;
+
+use Deliverea\CoffeeMachine\Interfaces\HotDrink;
 
 class Tea extends Drink implements HotDrink
 {

@@ -1,5 +1,9 @@
 <?php
 
+namespace Deliverea\CoffeeMachine\Models;
+
+use Deliverea\CoffeeMachine\Interfaces\HotDrink;
+use Deliverea\CoffeeMachine\Traits\Sweetable;
 
 class Coffee extends Drink implements HotDrink
 {

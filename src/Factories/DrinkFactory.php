@@ -1,10 +1,15 @@
 <?php
 
+namespace Deliverea\CoffeeMachine\Factories;
+
+use Deliverea\CoffeeMachine\Models\Tea;
+use Deliverea\CoffeeMachine\Models\Coffee;
+use Deliverea\CoffeeMachine\Models\Chocolate;
 
 class DrinkFactory implements AbstractDrinkFactory 
 {
     
-    public function makeDrink( string $type ): Drink
+    public static function makeDrink( string $type )
     {
         $drink = null;
 

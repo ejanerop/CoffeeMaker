@@ -1,5 +1,7 @@
 <?php
 
+namespace Deliverea\CoffeeMachine\Models;
+
 
 abstract class Drink
 {    

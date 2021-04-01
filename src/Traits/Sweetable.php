@@ -1,5 +1,6 @@
 <?php
 
+namespace Deliverea\CoffeeMachine\Traits;
 
 trait Sweetable
 {

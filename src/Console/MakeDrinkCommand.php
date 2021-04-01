@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Deliverea\CoffeeMachine\Factories\DrinkFactory;
 
 class MakeDrinkCommand extends Command
 {
@@ -52,6 +53,8 @@ class MakeDrinkCommand extends Command
              * Coffee    --> 0.5
              * Chocolate --> 0.6
              */
+            $drink = DrinkFactory::makeDrink($drinkType);
+            $output->writeln($drink->getPrize() . ' ' . $drink->getType());
             $money = $input->getArgument('money');
             switch ($drinkType) {
                 case 'tea':

@@ -2,9 +2,8 @@
 
 namespace Deliverea\CoffeeMachine\Interfaces;
 
-interface HotDrink
+interface Option
 {
         
-    public function isHot() : bool ;    
     
 }
