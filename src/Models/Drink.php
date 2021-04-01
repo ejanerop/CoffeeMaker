@@ -8,6 +8,7 @@ abstract class Drink
 {    
     protected float $prize;
     protected string $type;
+    protected string $message = 'You have ordered a ';
     
     
     public function getPrize() {
@@ -16,6 +17,10 @@ abstract class Drink
     
     public function getType() {
         return $this->type;
+    }
+
+    public function getMessage() {
+        return $this->message . $this->type;
     }
     
     protected function isEnough( float $money ) {
@@ -28,7 +33,7 @@ abstract class Drink
         if ($this->isEnough($money)) {
             return;
         } else {
-            throw new Exception('The ' . $this->type . ' costs ' . $this->prize);            
+            throw new Exception('The ' . $this->type . ' costs ' . $this->prize . '.');            
         }
         
     } 

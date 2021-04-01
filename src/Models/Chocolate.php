@@ -8,21 +8,29 @@ use Deliverea\CoffeeMachine\Traits\Sweetable;
 class Chocolate extends Drink implements HotDrink 
 {
     use Sweetable;
+    
+    private bool $extraHot = false; 
+
 
     public function __construct()
     {
         $this->type = 'chocolate';
         $this->prize = '0.6';
     }
-    
-    public function isHot(): bool
+
+    public function getMessage()
     {
-        return true;
+        return parent::getMessage() . ' ' . $this->isHot() . $this->sugars() . PHP_EOL;
+    }
+    
+    public function isHot(): string
+    {
+        return $this->extraHot ? 'extra hot ' : '';
     }
 
-    public function sugars(): int
+    public function warm( bool $warm ): void
     {
-        return 0; 
+        $this->extraHot = $warm;
     }
     
 }

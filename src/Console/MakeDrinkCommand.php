@@ -47,35 +47,20 @@ class MakeDrinkCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $drinkType = strtolower($input->getArgument('drink-type'));
-        $money = $input->getArgument('money');
-        $sugars = $input->getArgument('sugars');
-        $extraHot = $input->getOption('extra-hot');
-        $stick = false;
-
+        $money     = $input->getArgument('money');
+        $sugars    = $input->getArgument('sugars');
+        $extraHot  = $input->getOption('extra-hot');
+        
         try {
             $drink = DrinkFactory::makeDrink($drinkType);
             $drink->payDrink($money);
+            $drink->addSugars($sugars);
+            $drink->warm($extraHot);
+            $output->writeln($drink->getMessage());            
         } catch (Exception $ex) {
             $output->writeln($ex->getMessage());
             return;
         } 
-               
-        if ($sugars >= 0 && $sugars <= 2) {
-            $output->write('You have ordered a ' . $drinkType);
-            if ($extraHot) {
-                $output->write(' extra hot');
-            }
-            
-            if ($sugars > 0) {
-                $stick = true;
-                if($stick) {
-                    $output->write(' with ' . $sugars . ' sugars (stick included)');
-                }
-            }
-            $output->writeln('');
-        } else {
-            $output->writeln('The number of sugars should be between 0 and 2.');
-        }
         
     }
 }
