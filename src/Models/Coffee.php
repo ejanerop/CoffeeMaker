@@ -17,12 +17,12 @@ class Coffee extends Drink implements HotDrink
     
     public function getMessage()
     {
-        return parent::getMessage() . ' ' . $this->isHot() . $this->sugars() . PHP_EOL;
+        return parent::getMessage() . $this->isHot() . $this->sugars() ;
     }
     
     public function isHot(): string
     {
-        return $this->extraHot ? 'extra hot ' : '';
+        return $this->extraHot ? ' extra hot' : '';
     }
     
     public function warm( bool $warm ): void

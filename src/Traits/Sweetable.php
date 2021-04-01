@@ -22,7 +22,7 @@ trait Sweetable
     
     public function sugars() {
         if ($this->hasStick()) {
-            return 'with ' . $this->sugars . ' sugars ' . $this->stick();
+            return ' with ' . $this->sugars . ' sugars ' . $this->stick();
         }else {
             return '';
         }
