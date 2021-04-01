@@ -5,7 +5,6 @@ namespace Deliverea\CoffeeMachine\Factories;
 use Deliverea\CoffeeMachine\Models\Tea;
 use Deliverea\CoffeeMachine\Models\Coffee;
 use Deliverea\CoffeeMachine\Models\Chocolate;
-use Deliverea\CoffeeMachine\Exceptions\DrinkNotFoundException;
 use Exception;
 
 class DrinkFactory implements AbstractDrinkFactory 
