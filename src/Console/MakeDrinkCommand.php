@@ -44,7 +44,7 @@ class MakeDrinkCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $drinkType = strtolower($input->getArgument('drink-type'));
-        if (!in_array($drinkType, ['tea', 'coffee', 'chocolate'])) {
+        if (!in_array($drinkType, ['tea', 'coffee', 'chocolate'])) { 
             $output->writeln('The drink type should be tea, coffee or chocolate.');
         } else {
             /**
