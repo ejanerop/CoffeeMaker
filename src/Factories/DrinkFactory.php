@@ -5,11 +5,13 @@ namespace Deliverea\CoffeeMachine\Factories;
 use Deliverea\CoffeeMachine\Models\Tea;
 use Deliverea\CoffeeMachine\Models\Coffee;
 use Deliverea\CoffeeMachine\Models\Chocolate;
+use Deliverea\CoffeeMachine\Exceptions\DrinkNotFoundException;
+use Exception;
 
 class DrinkFactory implements AbstractDrinkFactory 
 {
     
-    public static function makeDrink( string $type )
+    public static function makeDrink( string $type ) 
     {
         $drink = null;
 
@@ -28,7 +30,7 @@ class DrinkFactory implements AbstractDrinkFactory
                 break;
             
             default:
-                $drink = new Tea;
+                throw new Exception('No existe esa bebida');
                 break;
         }
 

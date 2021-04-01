@@ -2,6 +2,7 @@
 
 namespace Deliverea\CoffeeMachine\Models;
 
+use Exception;
 
 abstract class Drink
 {    
@@ -22,6 +23,15 @@ abstract class Drink
         return $money >= $this->prize;
         
     }
+
+    public function payDrink( float $money ) {
+        if ($this->isEnough($money)) {
+            return;
+        } else {
+            throw new Exception('The ' . $this->type . ' costs ' . $this->prize);            
+        }
+        
+    } 
     
     
 }

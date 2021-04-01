@@ -2,7 +2,6 @@
 
 namespace Deliverea\CoffeeMachine\Factories;
 
-use Deliverea\CoffeeMachine\Models\Drink;
 
 interface AbstractDrinkFactory
 {        
