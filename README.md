@@ -12,25 +12,25 @@ app:order-drink
 
 Arguments
 
-|#|Name|Type|Required|Description|Values|Default|
-|---|---|---|---|---|---|---|
-|1|drinkType|string|true|Type of drink|tea, coffee, chocolate|
-|2|money|float|true|Amount of money given by the user in unit of currency||
-|3|sugars|int|false|Number of sugars|0, 1, 2|0|
+|#  |Name     |Type  |Required|Description                                          |Values                |Default|
+|---|---------|------|--------|-----------------------------------------------------|----------------------|-------|
+|1  |drinkType|string|true    |Type of drink                                        |tea, coffee, chocolate|       |
+|2  |money    |float |true    |Amount of money given by the user in unit of currency|                      |       |
+|3  |sugars   |int   |false   |Number of sugars                                     |0, 1, 2               |0      |
 
 Options
 
-|Name|Type|Required|Description|Values|Default|
-|---|---|---|---|---|---|
-|extraHot (--extra-hot, -e)| |false|Flag indicating if the user wants extra hot drink|true, false|false|
+|Name                      |Type|Required|Description                                      |Values     |Default|
+|--------------------------|----|--------|-------------------------------------------------|-----------|-------|
+|extraHot (--extra-hot, -e)|    |false   |Flag indicating if the user wants extra hot drink|true, false|false  |
 
 List prices
 
-|Drink|Price|
-|---|---|
-|Tea|0.4|
-|Coffee|0.5|
-|Chocolate|0.6|
+|Drink    |Price|
+|---------|-----|
+|Tea      |0.4  |
+|Coffee   |0.5  |
+|Chocolate|0.6  |
 
 Validations
 * If the drink type is not *tea*, *coffee* or *chocolate*, it shows the following message:
@@ -93,11 +93,11 @@ so that we could know how much money we have earned with each type of drink.
 
 Something like the following table would be great:
 
-|Drink|Money|
-|---|---|
-|Tea|15|
-|Coffee|25.75|
-|Chocolate|36|
+|Drink    |Money|
+|---------|-----|
+|Tea      |15   |
+|Coffee   |25.75|
+|Chocolate|36   |
 
 ## Project set up
 
