@@ -29,7 +29,7 @@ abstract class Drink
         
     }
 
-    public function payDrink( float $money ) {
+    protected function pay( float $money ) {
         if ($this->isEnough($money)) {
             return;
         } else {
@@ -37,6 +37,15 @@ abstract class Drink
         }
         
     } 
+
+    public function order( float $money ) {
+        $this->pay($money);
+        return $this->getMessage();
+    }
+
+    
+
+
     
     
 }

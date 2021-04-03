@@ -17,7 +17,7 @@ class Chocolate extends Drink implements HotDrink
         $this->type = 'chocolate';
         $this->prize = '0.6';
     }
-
+    
     /**
     * Build and returns the success message when a user orders a chocolate drink.
     *
@@ -28,7 +28,7 @@ class Chocolate extends Drink implements HotDrink
     {
         return parent::getMessage() . $this->isHot() . $this->sugars() ;
     }
-
+    
     /**
     * Returns 'extra hot' if when the option extra hot is selected.
     *
@@ -50,6 +50,15 @@ class Chocolate extends Drink implements HotDrink
     public function warm( bool $warm ): void
     {
         $this->extraHot = $warm;
+    }
+    
+    public function order( float $money , int $sugars = 0 , bool $warm = false ) 
+    {
+        $this->pay($money);
+        $this->addSugars($sugars);
+        $this->warm($warm);
+
+        return $this->getMessage();
     }
     
 }

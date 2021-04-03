@@ -31,5 +31,14 @@ class Coffee extends Drink implements HotDrink
     {
         $this->extraHot = $warm;
     }
+
+    public function order( float $money , int $sugars = 0 , bool $warm = false ) 
+    {
+        $this->pay($money);
+        $this->addSugars($sugars);
+        $this->warm($warm);
+
+        return $this->getMessage();
+    }
     
 }

@@ -52,11 +52,8 @@ class MakeDrinkCommand extends Command
         $extraHot  = $input->getOption('extra-hot');
         
         try {
-            $drink = DrinkFactory::makeDrink($drinkType);
-            $drink->payDrink($money);
-            $drink->addSugars($sugars);
-            $drink->warm($extraHot);
-            $output->writeln($drink->getMessage());            
+            $drink = DrinkFactory::makeDrink($drinkType);            
+            $output->writeln($drink->order( $money , $sugars , $extraHot ));            
         } catch (Exception $ex) {
             $output->writeln($ex->getMessage());
             return;
