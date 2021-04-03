@@ -2,7 +2,8 @@
 
 namespace Deliverea\CoffeeMachine\Traits;
 
-use Exception;
+use Deliverea\CoffeeMachine\Exceptions\IncorrectInputException;
+use Deliverea\CoffeeMachine\Exceptions\IncorrectSugarAmountException;
 
 trait Sweetable
 {
@@ -34,7 +35,7 @@ trait Sweetable
             $this->sugars = $sugars; 
             return;
         }else {
-            throw new Exception('The number of sugars should be between 0 and 2.');            
+            throw new IncorrectSugarAmountException('The number of sugars should be between 0 and 2.');            
         }
     }
     
