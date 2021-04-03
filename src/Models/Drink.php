@@ -2,7 +2,7 @@
 
 namespace Deliverea\CoffeeMachine\Models;
 
-use Exception;
+use Deliverea\CoffeeMachine\Exceptions\NotEnoughCashException;
 
 abstract class Drink
 {    
@@ -33,7 +33,7 @@ abstract class Drink
         if ($this->isEnough($money)) {
             return;
         } else {
-            throw new Exception('The ' . $this->type . ' costs ' . $this->prize . '.');            
+            throw new NotEnoughCashException('The ' . $this->type . ' costs ' . $this->prize . '.');            
         }
         
     } 

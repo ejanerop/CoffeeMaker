@@ -9,6 +9,8 @@ class Coffee extends Drink implements HotDrink
 {
     use Sweetable;
     
+    private bool $extraHot = false; 
+    
     public function __construct()
     {
         $this->type = 'coffee';

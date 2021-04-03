@@ -8,6 +8,8 @@ use Deliverea\CoffeeMachine\Traits\Sweetable;
 class Tea extends Drink implements HotDrink
 {
     use Sweetable;
+    
+    private bool $extraHot = false; 
 
     public function __construct()
     {
