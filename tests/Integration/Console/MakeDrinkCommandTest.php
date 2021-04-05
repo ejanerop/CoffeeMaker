@@ -3,11 +3,14 @@
 namespace Deliverea\CoffeeMachine\Tests\Integration\Console;
 
 use Deliverea\CoffeeMachine\Console\MakeDrinkCommand;
+use Deliverea\CoffeeMachine\Entity\Connection;
 use Deliverea\CoffeeMachine\Tests\Integration\IntegrationTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class MakeDrinkCommandTest extends IntegrationTestCase
 {
+
+
     protected function setUp()
     {
         parent::setUp();
@@ -27,6 +30,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
     ): void {
         $command = $this->application->find('app:order-drink');
         $commandTester = new CommandTester($command);
+        Connection::getManager()->beginTransaction();
         $commandTester->execute(array(
             'command'  => $command->getName(),
 
@@ -36,6 +40,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
             'sugars' => $sugars,
             '--extra-hot' => $extraHot
         ));
+        Connection::getManager()->rollback();
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();

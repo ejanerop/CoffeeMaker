@@ -2,18 +2,17 @@
 
 namespace Deliverea\CoffeeMachine\Entity;
 
-
+use Deliverea\CoffeeMachine\Entity\Connection;
 
 class Register
 {
     public static function logDrink( string $type , float $prize ) {
-        require "config/bootstrap.php";
         $product = new SoldDrink();
         $product->setType($type);
         $product->setPrize($prize);
         
-        $entityManager->persist($product);
-        $entityManager->flush();
+        Connection::getManager()->persist($product);
+        Connection::getManager()->flush();
     }
 
     public static function getSoldAmount( string $type ) {

@@ -9,10 +9,6 @@ use TypeError;
 
 class CofeeTest extends TestCase
 {
-    protected function setUp()
-    {
-        parent::setUp();
-    }
 
     public function testDefaultMessage() 
     {
