@@ -8,7 +8,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Deliverea\CoffeeMachine\Factories\DrinkFactory;
-use Deliverea\CoffeeMachine\Exceptions\DrinkNotFoundException;
 use Exception;
 
 class MakeDrinkCommand extends Command

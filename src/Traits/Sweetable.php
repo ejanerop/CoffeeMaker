@@ -2,7 +2,6 @@
 
 namespace Deliverea\CoffeeMachine\Traits;
 
-use Deliverea\CoffeeMachine\Exceptions\IncorrectInputException;
 use Deliverea\CoffeeMachine\Exceptions\IncorrectSugarAmountException;
 
 trait Sweetable
@@ -27,8 +26,7 @@ trait Sweetable
         }else {
             return '';
         }
-    }
-    
+    }    
     
     public function addSugars( int $sugars ) {
         if ($sugars >= 0 && $sugars <= 2) {

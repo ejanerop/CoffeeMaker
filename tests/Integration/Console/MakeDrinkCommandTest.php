@@ -49,7 +49,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
                 'chocolate', '0.7', 1, '', 'You have ordered a chocolate with 1 sugars (stick included)' . PHP_EOL
             ],
             [
-                'tea', '0.4', 0, 1, 'You have ordered a tea extra hot' . PHP_EOL
+                'tea'      , '0.4', 0, 1 , 'You have ordered a tea extra hot' . PHP_EOL
             ],
             [
                 'coffee', '2', 2, 1, 'You have ordered a coffee extra hot with 2 sugars (stick included)' . PHP_EOL
