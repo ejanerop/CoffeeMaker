@@ -2,6 +2,7 @@
 
 namespace Deliverea\CoffeeMachine\Models;
 
+use Deliverea\CoffeeMachine\Entity\Register;
 use Deliverea\CoffeeMachine\Interfaces\HotDrink;
 use Deliverea\CoffeeMachine\Traits\Sweetable;
 
@@ -57,6 +58,7 @@ class Chocolate extends Drink implements HotDrink
         $this->pay($money);
         $this->addSugars($sugars);
         $this->warm($warm);
+        Register::logDrink( $this->type , $this->prize );
 
         return $this->getMessage();
     }
