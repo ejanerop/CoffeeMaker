@@ -6,7 +6,6 @@ use Deliverea\CoffeeMachine\Exceptions\DrinkNotFoundException;
 use Deliverea\CoffeeMachine\Models\Tea;
 use Deliverea\CoffeeMachine\Models\Coffee;
 use Deliverea\CoffeeMachine\Models\Chocolate;
-use Exception;
 
 class DrinkFactory implements AbstractDrinkFactory 
 {
@@ -37,7 +36,7 @@ class DrinkFactory implements AbstractDrinkFactory
                 break;
                         
             default:
-                throw new DrinkNotFoundException('No existe esa bebida');
+                throw new DrinkNotFoundException('There is no such drink');
                 break;
         }
 

@@ -10,8 +10,7 @@ class Chocolate extends Drink implements HotDrink
 {
     use Sweetable;
     
-    private bool $extraHot = false; 
-    
+    private bool $extraHot = false;    
     
     public function __construct()
     {
@@ -20,8 +19,7 @@ class Chocolate extends Drink implements HotDrink
     }
     
     /**
-    * Build and returns the success message when a user orders a chocolate drink.
-    *
+    * Build and returns the success message when a user orders a chocolate.
     *
     * @return string The message to be displayed in the console.
     */
@@ -31,7 +29,7 @@ class Chocolate extends Drink implements HotDrink
     }
     
     /**
-    * Returns 'extra hot' if when the option extra hot is selected.
+    * Returns 'extra hot' when the option extra hot is selected.
     *
     *
     * @return string The 'extra hot' string if the user selected that option.

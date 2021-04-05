@@ -20,11 +20,12 @@ class ListSalesCommand extends Command
     {
         
         try {     
-            $totalTea = Register::getSoldAmount('tea');   
+            $totalTea       = Register::getSoldAmount('tea');   
             $totalChocolate = Register::getSoldAmount('coffee');   
-            $totalCoffee = Register::getSoldAmount('chocolate');   
-            $output->writeln('|Drink    |Money|');            
-            $output->writeln('|---------|-----|');            
+            $totalCoffee    = Register::getSoldAmount('chocolate');   
+
+            $output->writeln('|Drink    |Money|'           );            
+            $output->writeln('|---------|-----|'           );            
             $output->writeln('|Tea      |'.$totalTea       );            
             $output->writeln('|Coffee   |'.$totalChocolate );            
             $output->writeln('|Chocolate|'.$totalCoffee    );                  

@@ -6,7 +6,8 @@ use Deliverea\CoffeeMachine\Entity\Connection;
 
 class Register
 {
-    public static function logDrink( string $type , float $prize ) {
+    public static function logDrink( string $type , float $prize ) 
+    {
         $product = new SoldDrink();
         $product->setType($type);
         $product->setPrize($prize);
@@ -15,9 +16,9 @@ class Register
         Connection::getManager()->flush();
     }
 
-    public static function getSoldAmount( string $type ) {
-        require "config/bootstrap.php";
-        $soldDrinks = $entityManager->getRepository(SoldDrink::class)->findBy(array('type' => $type));
+    public static function getSoldAmount( string $type ) 
+    {
+        $soldDrinks = Connection::getManager()->getRepository(SoldDrink::class)->findBy(array('type' => $type));
         $sum = 0.0;
         foreach ($soldDrinks as $drink) {
             $sum += $drink->getPrize();

@@ -6,8 +6,8 @@ use Deliverea\CoffeeMachine\Exceptions\NotEnoughCashException;
 
 abstract class Drink
 {    
-    protected float $prize;
-    protected string $type;
+    protected float  $prize;
+    protected string $type ;
     protected string $message = 'You have ordered a ';
     
     
@@ -18,7 +18,7 @@ abstract class Drink
     public function getType() {
         return $this->type;
     }
-
+    
     public function getMessage() {
         return $this->message . $this->type;
     }
@@ -28,7 +28,16 @@ abstract class Drink
         return $money >= $this->prize;
         
     }
-
+    
+    /**
+    * Checks if the user inputs enough money to buy the drink.
+    *
+    * @param float $money The money input by the user
+    *
+    *@throws NotEnoughCashException
+    *
+    * @return void 
+    */
     protected function pay( float $money ) {
         if ($this->isEnough($money)) {
             return;
@@ -37,15 +46,15 @@ abstract class Drink
         }
         
     } 
-
+    
     public function order( float $money ) {
         $this->pay($money);
         return $this->getMessage();
     }
-
     
-
-
+    
+    
+    
     
     
 }
