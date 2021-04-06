@@ -16,7 +16,7 @@ $conn = array(
     'dbname'   => $_ENV['DATABASE_NAME'],
     'user'     => $_ENV['DATABASE_USER'],
     'password' => $_ENV['DATABASE_PASSWORD'],
-    'host'     => $_ENV['DATABASE_HOST'],
+    'host'     => 'mysql:3305',
     'driver'   => 'pdo_mysql',
 );
 
