@@ -6,7 +6,11 @@ require __DIR__.'/vendor/autoload.php';
 
 use Deliverea\CoffeeMachine\Console\MakeDrinkCommand;
 use Deliverea\CoffeeMachine\Console\ListSalesCommand;
+use Dotenv\Dotenv;
 use Symfony\Component\Console\Application;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 $application = new Application();
 
