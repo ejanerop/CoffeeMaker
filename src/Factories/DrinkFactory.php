@@ -15,6 +15,9 @@ class DrinkFactory implements AbstractDrinkFactory
     *
     *
     * @param string $type Type of drink to be instantiated.
+    *
+    * @throws DrinkNotFoundException
+    *
     * @return Drink An instance of a Drink children's class.
     */
     public static function makeDrink( string $type ) 
@@ -27,19 +30,19 @@ class DrinkFactory implements AbstractDrinkFactory
                 $drink = new Tea;
                 break;
                 
-            case 'coffee':
-                $drink = new Coffee;
-                break;
+                case 'coffee':
+                    $drink = new Coffee;
+                    break;
                     
-            case 'chocolate':
-                $drink = new Chocolate;
-                break;
+                    case 'chocolate':
+                        $drink = new Chocolate;
+                        break;
                         
-            default:
-                throw new DrinkNotFoundException('There is no such drink');
-                break;
-        }
-
-        return $drink;
-    }
-}
+                        default:
+                        throw new DrinkNotFoundException('There is no such drink');
+                        break;
+                    }
+                    
+                    return $drink;
+                }
+            }

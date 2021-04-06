@@ -27,11 +27,20 @@ trait Sweetable
             return '';
         }
     }    
-    
+
+    /**
+    * Add the amount of sugars specified, or throws an exception if the amount is invalid.
+    *
+    *
+    * @param int $sugars The number of sugars to add.
+    *
+    * @throws IncorrectSugarAmountException
+    *
+    * @return void
+    */
     public function addSugars( int $sugars ) {
         if ($sugars >= 0 && $sugars <= 2) {
             $this->sugars = $sugars; 
-            return;
         }else {
             throw new IncorrectSugarAmountException('The number of sugars should be between 0 and 2.');            
         }

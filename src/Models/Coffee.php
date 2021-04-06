@@ -23,7 +23,7 @@ class Coffee extends Drink implements HotDrink
     *
     * @return string The message to be displayed in the console.
     */
-    public function getMessage()
+    protected function getMessage()
     {
         return parent::getMessage() . $this->isHot() . $this->sugars() ;
     }

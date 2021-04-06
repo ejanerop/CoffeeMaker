@@ -28,7 +28,7 @@ class SoldDrink
     protected $prize;
     
     /** 
-    * @ORM\Column(type="datetime", name="posted_at", nullable=true) 
+    * @ORM\Column(type="string", name="posted_at", nullable=true) 
     */    
     private $postedAt;
     

@@ -11,6 +11,7 @@ class Register
         $product = new SoldDrink();
         $product->setType($type);
         $product->setPrize($prize);
+        $product->setPostedAt(date("Y/m/d-H:i:s"));
         
         Connection::getManager()->persist($product);
         Connection::getManager()->flush();

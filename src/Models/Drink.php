@@ -19,7 +19,7 @@ abstract class Drink
         return $this->type;
     }
     
-    public function getMessage() {
+    protected function getMessage() {
         return $this->message . $this->type;
     }
     
@@ -34,7 +34,7 @@ abstract class Drink
     *
     * @param float $money The money input by the user
     *
-    *@throws NotEnoughCashException
+    * @throws NotEnoughCashException
     *
     * @return void 
     */
