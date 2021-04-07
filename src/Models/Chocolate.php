@@ -23,7 +23,7 @@ class Chocolate extends Drink implements HotDrink
     *
     * @return string The message to be displayed in the console.
     */
-    protected function getMessage()
+    public function getMessage()
     {
         return parent::getMessage() . $this->isHot() . $this->sugars() ;
     }
