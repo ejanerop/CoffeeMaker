@@ -6,6 +6,7 @@
         "vlucas/phpdotenv": "^5.3"
     },
     "autoload": {
+        "files": ["config/dotenv.php"],
         "psr-4": {
             "Deliverea\\CoffeeMachine\\": "src",
             "Deliverea\\CoffeeMachine\\Tests\\Unit\\": "tests/Unit",
