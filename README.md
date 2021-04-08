@@ -7,6 +7,7 @@ Coffee Machine is an awesome console application that from a few input parameter
 Command
 ```
 app:order-drink 
+app:sold-drinks
 
 ```
 
@@ -105,6 +106,7 @@ Install and run the application.
 ```
 docker/composer install
 docker/up
+docker/migrate
 ```
 
 Examples of the use of the application.
@@ -112,6 +114,7 @@ Examples of the use of the application.
 docker/console app:order-drink tea 0.5 1 -e
 docker/console app:order-drink coffee 0.5
 docker/console app:order-drink chocolate 1 --extra-hot
+docker/console app:sold-drinks
 ```
 
 Run tests

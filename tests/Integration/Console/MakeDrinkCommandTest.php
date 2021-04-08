@@ -3,15 +3,17 @@
 namespace Deliverea\CoffeeMachine\Tests\Integration\Console;
 
 use Deliverea\CoffeeMachine\Console\MakeDrinkCommand;
+use Deliverea\CoffeeMachine\Entity\Connection;
 use Deliverea\CoffeeMachine\Tests\Integration\IntegrationTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class MakeDrinkCommandTest extends IntegrationTestCase
 {
+
+
     protected function setUp()
     {
         parent::setUp();
-
         $this->application->add(new MakeDrinkCommand());
     }
 
@@ -27,6 +29,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
     ): void {
         $command = $this->application->find('app:order-drink');
         $commandTester = new CommandTester($command);
+        Connection::getManager()->beginTransaction();
         $commandTester->execute(array(
             'command'  => $command->getName(),
 
@@ -36,6 +39,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
             'sugars' => $sugars,
             '--extra-hot' => $extraHot
         ));
+        Connection::getManager()->rollback();
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
@@ -49,7 +53,7 @@ class MakeDrinkCommandTest extends IntegrationTestCase
                 'chocolate', '0.7', 1, '', 'You have ordered a chocolate with 1 sugars (stick included)' . PHP_EOL
             ],
             [
-                'tea', '0.4', 0, 1, 'You have ordered a tea extra hot' . PHP_EOL
+                'tea'      , '0.4', 0, 1 , 'You have ordered a tea extra hot' . PHP_EOL
             ],
             [
                 'coffee', '2', 2, 1, 'You have ordered a coffee extra hot with 2 sugars (stick included)' . PHP_EOL

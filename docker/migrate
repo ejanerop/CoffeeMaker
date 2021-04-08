@@ -5,4 +5,5 @@ docker run -it --rm \
     -v "$PWD":/usr/src/myapp \
     -w /usr/src/myapp \
     --network="coffee_machine_net" \
-    coffee-machine.php-cli php vendor/bin/phpunit $@
+    coffee-machine.php-cli php vendor/bin/doctrine orm:schema-tool:create
+
