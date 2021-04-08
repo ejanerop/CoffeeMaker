@@ -7,6 +7,7 @@ Coffee Machine is an awesome console application that from a few input parameter
 Command
 ```
 app:order-drink 
+app:sold-drinks
 
 ```
 
