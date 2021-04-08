@@ -104,6 +104,7 @@ Something like the following table would be great:
 
 Install and run the application.
 ```
+docker network create coffee_machine_net
 docker/composer install
 docker/up
 docker/migrate
