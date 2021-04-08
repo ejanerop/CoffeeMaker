@@ -2,3 +2,6 @@
 vendor/
 .env
 *.bundle
+*.EAP
+*.ldb
+project.EAP
