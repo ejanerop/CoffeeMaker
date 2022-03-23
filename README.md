@@ -59,7 +59,7 @@ You have ordered a coffee with 2 sugars (stick included).
 You have ordered a coffee extra hot with 2 sugars (stick included)    
 ```
 
-## Current status
+## Previous status
 
 This application was implemented by a developer who is no longer in the company.
 
@@ -73,7 +73,7 @@ He also implemented an integration test covering all possibilities (`MakeDrinkCo
 As you can see, this class is a bit messy and we need to adapt it to our coding standards
 so that we can create a Merge Request and merge it into master
 
-## What you have to do?
+## What did I do?
 
 We would like to have a reusable, maintainable and testable code, so we want to refactor
 this `MakeDrinkCommand` following these principles:
@@ -86,8 +86,6 @@ this `MakeDrinkCommand` following these principles:
 * Unit testing
 * TDD
 * Hexagonal architecture
-
-You don't have to implement them all, but make the code better to be more comfortable with it.
 
 Also, if there is time, our Product Owner has asked us to implement a new feature
 so that we could know how much money we have earned with each type of drink.
